@@ -1,0 +1,116 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #0c1014;
+    color:white;
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
+    
+}
+h1{
+    font-size: 62px;
+    text-transform: uppercase;
+    text-align: center; /*como ele nao esta dentro de nenhuma div basta colocar o text algiht msm que ele vai*/
+    margin: 46px 0; /*isso foi para dar um leve espacamento entre as linhas*/
+}
+.header{
+    display: flex; /*desbloquiei meu display para ele trabalhar em linha*/
+    background-color: #05080a;
+    padding: 16px; /*para desgrudar eles de la de cima*/
+    justify-content: space-between; /*aquela poha que eu esqueci, basicamente ele faz exataemtne oque o nome ja diz
+    coloca um espaco entre os objetos , detalhe que como os objetos estao dentro do header o espace between tem que estar
+    dentro do header*/
+    align-items: center; /*coloquei os itens dentro centralizados */
+
+}
+.header__logo{
+    font-size: 36px;
+    text-transform: uppercase; /*transformei em maiusculo*/
+    margin-left: 16px; /*dei um espacamento para a direita */
+    letter-spacing: 2px; /*dei um leve espacamento nas letras*/
+}
+.header__nav ul{
+    display: flex; /*deixei os elementos da ul em linha*/ 
+    list-style-type: none ; /*retirei as bolinhas*/
+    font-size: 18px; /*aumentei o tamanho*/
+    gap: 16px; /*dei um espacamento entre eles*/
+
+}
+.header__nav a{
+    color: white;
+    text-decoration: none;
+    padding: 14px; /*dei um espacamento ainda maior, usei o padding aqui ao inves de aumentar o gap pelo simples motivo dos efeitos de 
+    background e tal*/
+    border-radius: 10px;
+}
+a.header__nav--active { /*eu tive que colocar o  a na frente por causa da especificidade do css
+    ou seja quanto mais especifico for a classe ela se sobressai, entao a cor da classe de cima estava se sobressaindo
+    entao  eu especifiquei mais essa para a color fazer efeito*/
+    background-color: #cbe300;
+    color: #0c1014;
+    pointer-events: none; /*eu retirei o evento de clique nele */
+
+}
+.header__nav a:hover {
+    text-decoration: underline;
+}
+.pricing{
+    display: flex;/*usei o display flex para enfileirar meus itens detalhe importante 
+    o display flex vai no elemento pai do item que voce quer mexer*/
+    gap: 16px;
+}
+.pricing-plan {
+    flex: 1; /*eu so colocar o flex:1 é a mesma coisa que colocar o flex grown:1*/
+    /*eu peguei o espacos sobrando no container pricing e distribui eles igualmente*/
+    background-color: #1f262c;
+    padding: 30px; /*distanciei o conteudo do elemento*/
+    border-radius: 10px; /*arredondei as bordas*/
+    box-shadow: 0px 5px 15px -6px black; /*adicionei uma sombra nos cards, o ultimo elemento eu controlo o tomanho da sombra digamos assim*/
+    display: flex; /*transformei meus itens  dentro em flex, fiz isso para modificar o item "a"*/ 
+    flex-direction: column; 
+}
+.pricing-plan__title {
+    text-transform: uppercase; /*transformei as letras em maiusculas*/
+    border-bottom: 2px solid #cbe300;/*coloquei uma bordinha amarela embaixo*/
+    margin-top: 0; /*retirei a borda da parte de cima o texto se deslocou mais para cima*/
+    padding-bottom: 10px;/*distanciei a margin do texto*/
+    /*a diferenca do padding pro margin pelo oque eu vi é que o padding distancia o elemento e a margin
+    distancia o item;*/
+    letter-spacing: 2px; /*distanciei as letras*/
+}
+.pricing-plan p {
+    margin-top: 0;
+}
+
+.pricing-plan__price {
+    font-size: 33px; 
+}
+
+.pricing-plan__features {
+    margin: 0 0 35px;
+    color: #b5b5b5;
+    padding-left: 16px;
+    line-height: 1.8; /*dei um espacamento no tamanho das linhas*/
+    flex-grow: 1; /* O espacamento que sobrou foi para baixo empurrando os items todos
+    e todos ficaram alinhados */
+}
+
+.pricing-plan__features li::marker { /*para adicionar pseudoelementos da classe tem que ultilizar os :: 
+    que com isso tu consegue modificar algo bem especifico dentro daquela classe*/
+    color:#cbe300
+}
+.pricing-plan__cta {
+    text-decoration: none;
+    color: #0c1014;
+    background-color: #cbe300;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold; /*coloquei em negrito*/
+    padding: 16px 10px; /*coloquei um espacamento semelhante a um botao*/
+    text-align: center;
+}
+.pricing-plan__cta:hover {
+    background-color: #26272798;
+    color: #b5b5b5;
+}
